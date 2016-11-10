@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Shapes and first letter</title>
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<style>
+		body {
+			margin:0;
+			font-family: "Lora", Georgia, serif;
+			background: #FFF2E8;
+		}
+		h1 {color: #358E5B;font-weight:bold;font-size:5em;margin:0;line-height:1;}
+		h2 {font-size: 1.95em;margin: 0;line-height:1;}
+		.main {padding: 2em 5em;line-height:2;}
+		.shape-container {
+			display:block;
+			width: 225px;
+			height: 225px;			
+			background: #358E5B;
+			position: relative;
+		}
+		.shape-container.right {
+			float:right;
+			margin-left: 1em;
+		}
+		.shape-container.left {
+			float:left;
+			margin-right: 1em;
+		}
+		.diamond {
+			-webkit-shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+					shape-outside: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+			-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+					clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+		}
+		.hexagon {
+			-webkit-shape-outside: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+					shape-outside: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+			-webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+					clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+		}
+		.circle {
+			-webkit-shape-outside: circle(50% at 50% 50%);
+					shape-outside: circle(50% at 50% 50%);
+			-webkit-clip-path: circle(50% at 50% 50%);
+					clip-path: circle(50% at 50% 50%);
+		}
+		.cacti {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 470 470' style='enable-background:new 0 0 470 470;' xml:space='preserve' width='512px' height='512px'%3E%0A%3Cg%3E%0A%09%3Cpath d='M372.81,48.062c-22.594,0-40.976,18.382-40.976,40.976v77.608c0,23.154-16.968,42.411-39.121,46.01V57.713   C292.713,25.89,266.823,0,235,0s-57.713,25.89-57.713,57.713v221.893c-22.153-3.599-39.121-22.856-39.121-46.01v-77.608   c0-22.594-18.382-40.976-40.976-40.976c-22.594,0-40.976,18.381-40.976,40.976v77.608c0,68.376,53.655,124.458,121.072,128.356V455   h-22.5c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h160.427c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5h-22.5V295.001   c67.417-3.898,121.072-59.979,121.072-128.356V89.037C413.786,66.443,395.404,48.062,372.81,48.062z M398.786,166.646   c0,62.624-50.948,113.572-113.572,113.572c-4.142,0-7.5,3.358-7.5,7.5V455h-85.427V354.669c0-4.142-3.358-7.5-7.5-7.5   c-62.624,0-113.572-50.948-113.572-113.572v-77.608c0-14.323,11.652-25.976,25.976-25.976c14.323,0,25.976,11.653,25.976,25.976   v77.608c0,31.438,23.67,57.434,54.121,61.148v12.973c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5V57.713   C192.287,34.161,211.448,15,235,15s42.713,19.161,42.713,42.713v183.053c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-12.973   c30.451-3.714,54.121-29.711,54.121-61.148V89.037c0-14.323,11.653-25.976,25.976-25.976s25.976,11.653,25.976,25.976V166.646z' fill='%230ec71a'/%3E%0A%09%3Cpath d='M235,400.013c-4.142,0-7.5,3.358-7.5,7.5v15c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-15   C242.5,403.371,239.142,400.013,235,400.013z' fill='%230ec71a'/%3E%0A%09%3Cpath d='M255.213,150.013c-4.142,0-7.5,3.358-7.5,7.5v15c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-15   C262.713,153.371,259.355,150.013,255.213,150.013z' fill='%230ec71a'/%3E%0A%09%3Cpath d='M214.787,100.013c-4.142,0-7.5,3.358-7.5,7.5v15c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-15   C222.287,103.371,218.929,100.013,214.787,100.013z' fill='%230ec71a'/%3E%0A%09%3Cpath d='M372.81,115.013c-4.142,0-7.5,3.358-7.5,7.5v15c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-15   C380.31,118.371,376.952,115.013,372.81,115.013z' fill='%230ec71a'/%3E%0A%09%3Cpath d='M97.19,205.013c-4.142,0-7.5,3.358-7.5,7.5v15c0,4.142,3.358,7.5,7.5,7.5s7.5-3.358,7.5-7.5v-15   C104.69,208.371,101.332,205.013,97.19,205.013z' fill='%230ec71a'/%3E%0A%3C/g%3E%0A%3C/svg%3E");
+			background-size: 75%;
+		    background-repeat: no-repeat;
+		    background-position: 75% 75%;
+
+		}
+		.aloe-vera {
+			background: url(img/aloe-vera.jpg) no-repeat transparent;
+			background-size:150%;
+			background-position: 50%;
+		}
+		.mono:after {
+			content: attr(data-caption);
+			font-weight:bold;
+			font-size: 3em;
+			line-height: 1;
+			color: white;
+			display:block;
+			position: absolute;
+			text-align: center;
+			top: 48%;
+			width: 100%;
+			transform: translateY(-50%);
+		}
+	</style>
+</head>
+<body>
+<div class="main">
+	<h1>Succulents</h1>
+	<section>
+	<div class="shape-container diamond right cacti"></div>
+	<p>In botany, succulent plants, also known as succulents or sometimes fat plants, are plants that have some parts that are more than normally thickened and fleshy, usually to retain water in arid climates or soil conditions. The word "succulent" comes from the Latin word sucus, meaning juice, or sap. Succulent plants may store water in various structures, such as leaves and stems. Some definitions also include roots, so that geophytes that survive unfavorable periods by dying back to underground storage organs may be regarded as succulents. In horticultural use, the term "succulent" is often used in a way which excludes plants that botanists would regard as succulents, such as cacti. Succulents are often grown as ornamental plants because of their striking and unusual appearance.<p>
+
+	<p>About 60 different plant families contain succulents. In some families, such as Cactaceae, Agavoideae, Aizoaceae, and Crassulaceae, most plants are succulents. The habitats of these water preserving plants are often in areas with high temperatures and low rainfall. Succulents have the ability to thrive on limited water sources, such as mist and dew, which makes them equipped to survive in an ecosystem which contains scarce water sources.</p>
+	<h2>Definition</h2>
+	<p>A general definition of succulents is that they are drought resistant plants in which the leaves, stem or roots have become more than usually fleshy by the development of water-storing tissue. Other sources exclude roots as in the definition "a plant with thick, fleshy and swollen stems and/or leaves, adapted to dry environments." This difference affects the relationship between succulents and "geophytes" – plants that survive unfavorable seasons as a resting bud on an underground organ. These underground organs, such as bulbs, corms and tubers, are often fleshy with water-storing tissues. Thus if roots are included in the definition, many geophytes would be classed as succulents. Plants adapted to living in dry environments such as succulents are termed xerophytes. However, not all xerophytes are succulents, since there are other ways of adapting to a shortage of water, e.g., by developing small leaves which may roll up or having leathery rather than succulent leaves. Nor are all succulents xerophytes, since plants like Crassula helmsii are both succulent and aquatic.</p>
+	<div class="shape-container hexagon left aloe-vera"></div>
+	<p>Those who grow succulents as a hobby use the term in a different way to botanists. In horticultural use, the term succulent regularly excludes cacti. For example, Jacobsen's three volume Handbook of Succulent Plants does not cover cacti, and "cacti and succulents" is the title or part of the title of many books covering the cultivation of these plants. However, in botanical terminology, cacti are succulents. Horticulturists may also exclude other groups of plants, e.g., bromeliads. A practical, but unscientific, horticultural definition is "a succulent plant is any desert plant that a succulent plant collector wishes to grow." Such plants less often include geophytes (in which the swollen storage organ is wholly underground) but do include plants with a caudex, which is a swollen above-ground organ at soil level, formed from a stem, a root or both.</p>
+	<h2>Origins</h2>
+	<div class="shape-container circle right mono" data-caption="dry"></div>
+	<p>Many succulents come from dry areas such as steppes, semi-desert, and desert. High temperatures and low precipitation force plants to collect and store water to survive long dry periods. Some species of cactus can survive for months without rainfall.[16] Succulents may occasionally occur as epiphytes, growing on other plants with limited or no contact with the ground, and are dependent on their ability to store water and gain nutrients by other means; this niche is seen in Tillandsia. Succulents also occur as inhabitants of sea coasts and dry lakes, which are exposed to high levels of dissolved minerals that are deadly to many other plant species.</p>
+	</section>
+</div>
+	
+</html>

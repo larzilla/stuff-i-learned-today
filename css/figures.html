@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fancy Figures</title>
+	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Karla', sans-serif;			
+			font-weight: normal;
+			font-style:normal;
+			background: hsla(0, 0%, 100%, 1);
+			padding: 0;
+			margin: 0;
+			cursor: auto;
+			position: relative;
+			line-height: 1.5;
+		}
+		* {
+			box-sizing: border-box;
+		}
+		.main {
+			width:100%;
+			padding: 30px;			
+		}
+		.row:after {
+			display:block;
+			content: " ";
+			overflow:hidden;
+			visibility: hidden;
+			clear:both;
+		}
+		figure {
+			width: 100%;			
+			margin:0;			
+			position: relative;
+			overflow:hidden;
+			min-height: 225px;			
+		}
+		.featured-item {
+			border-bottom: 6px solid white;
+		}
+		.additional-items figure {
+			height: 50%;			
+		}
+		.additional-items figure:first-child {
+			border-bottom: 6px solid white;
+		}
+		figure img {				
+			z-index: 0;
+			width: 100%;
+			height: auto;
+			position: absolute;
+		}
+		figcaption p {
+			color: hsla(33,94%,54%,1);
+			text-transform: uppercase;
+			margin-top: .5rem;
+		}
+		figcaption .mosaic-header {
+			line-height: 1;			
+		}
+		figure:hover .mosaic-text {
+			padding-bottom: 2rem;
+		}		
+		.featured-item .mosaic-header,
+		.additional-items .mosaic-header {
+			font-size: 1.2rem;
+		}
+		figcaption {
+			color: hsla(0, 0%, 100%, 1);	
+			position: absolute;
+			bottom: 0;					
+			width: 100%;
+			height: 100%;						
+		}
+		figcaption a {
+			color: white;
+			display:block;
+			width: 100%;
+			height: 100%;			
+			position: relative;	
+			text-decoration: none;		
+		}
+		figcaption .mosaic-text {
+			padding: 1em;
+			background: hsla(210, 92%, 10%, .75);
+			text-decoration: none;
+			position: absolute;
+			bottom: 0;
+			transition: all 300ms ease-out;
+			width: 100%;
+		}
+		@media (min-width: 968px) {			
+			figure {
+				min-height: 0;
+			}
+			figure img {
+				position: static;
+			}
+			.mosaic {
+				height:340px;
+				display:flex;
+			}
+			.featured-item {
+				display:flex;
+			}
+			.featured-item {
+				border-right: 6px solid white;
+				border-bottom: 0;
+				flex: 1 0 60%;					
+			}
+			.additional-items {
+				flex: 1 0 40%;
+				display: flex;
+				flex-direction: column;
+			}
+			.featured-item .mosaic-header {
+				font-size: 1.625rem;
+			}		
+		}
+		@media (min-width: 1024px) {
+			.main {width: 75%;}
+		}
+		@media (min-width: 1224px) {
+			.mosaic {
+				height: 440px;
+			}
+		}
+		@media (min-width: 1375px) {
+			.mosaic {
+				height:512px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="mosaic row">
+			<div class="featured-item">
+				<figure>
+					<img src="https://placem.at/places?w=576&h=512" />
+					<figcaption>
+						<a href="/">
+							<div class="mosaic-text">							
+								<div class="mosaic-header">Allegis Group sets you up for long-term success. Whether you’re looking for a new opportunity...</div>
+								<p>Allegis Group, August 7, 2015</p>
+							</div>
+						</a>
+					</figcaption>
+				</figure>	
+			</div>	
+			<div class="additional-items">
+				<figure>
+					<img src="https://placem.at/places?w=576&h=512" />
+					<figcaption>
+						<a href="/">
+							<div class="mosaic-text">							
+								<div class="mosaic-header">Allegis Group sets you up for long-term success. Whether you’re looking for a new opportunity...</div>
+								<p>Allegis Group, August 7, 2015</p>
+							</div>
+						</a>
+					</figcaption>
+				</figure>	
+				<figure>
+					<img src="https://placem.at/places?w=576&h=512" />
+					<figcaption>
+						<a href="/">
+							<div class="mosaic-text">							
+								<div class="mosaic-header">Allegis Group sets you up for long-term success. Whether you’re looking for a new opportunity...</div>
+								<p>Allegis Group, August 7, 2015</p>
+							</div>
+						</a>
+					</figcaption>
+				</figure>	
+			</div>					
+		</div>		
+	</div>
+</body>
+</html>
