@@ -9,5 +9,6 @@ This repository is simply a collection of small things I learn daily across a va
 So far, the repository includes studies in...
 
 * CSS
+* SVG
 
 ...with more to come.
