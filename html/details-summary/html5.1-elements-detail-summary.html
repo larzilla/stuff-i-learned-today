@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML 5.1 Elements - Detail and Summary</title>
+  <link href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700" rel="stylesheet">
+  <style>
+    body {
+      background-image:url('mountains.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: fixed;
+      color: #fff;
+      font-family: "Cardo", serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      font-size: 14px;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display:block;
+      z-index: 0;
+      background: rgba(12,0,40,.3);
+    }
+    .main {padding: 3rem;position:relative;max-width:60rem;margin:0 auto;}
+    h1,h2 {margin-top:0;}
+    h1 {font-weight: 700;font-size:3em;line-height:1;margin-bottom:.45em;}
+    h2 {font-size: 1.35em;font-weight:400;margin-bottom:1rem;}
+    section {
+      padding: 20px 0;
+    }
+    details {
+      border-bottom: 1px solid rgba(255,255,255, 0.5);  
+      color: #fff;
+      font-size: 1rem;
+      font-style: normal;   
+    }
+    summary {
+      font-size: 18px;
+      padding: 10px;
+      cursor: pointer;  
+      font-size: 1.35rem;
+    }
+    summary::-webkit-details-marker {display: none}
+    summary:before {
+      color: #F4E93B;
+      content: "+";
+      line-height: 1;
+      padding: 4px;
+      margin-right: 10px;  
+      display: block;
+      float: left;
+      font-size: 20px;
+      border: 1px solid;
+      border-radius: 16px;
+      text-align: center;
+      height: 20px;
+      width: 20px;
+    }
+    details[open] summary:before {content: "-"}
+    details[open] summary {
+      border-bottom: 1px solid rgba(243, 231, 57, 0.5);
+      color: rgb(243, 231, 57);
+    }
+    summary:focus {
+      color: rgb(243, 231, 57);
+      outline: 1px solid rgba(243, 231, 57, 0.5); 
+    }
+    details .contents {
+      margin-left: 30px;
+    }
+    @media(min-width:40rem) {
+      body {
+        font-size: 16px;
+      }
+      h1 {font-size:4em;}
+      section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="main">
+  <h1>Everything had suddenly become very still...</h1>
+  <h2>Far away to the southeast, marking the quiet, we heard the Martians hooting to one another, and then the air quivered again with the distant thud of their guns. 
+  <section>
+    <details>
+      <summary>Far away to the southeast</summary>
+      <div class="contents">
+        <p>Marking the quiet, we heard the Martians hooting to one another, and then the air quivered again with the distant thud of their guns</p>
+      </div>
+    </details>
+    <details>
+      <summary>But the artillery made no reply</summary>
+      <div class="contents">
+        <p>Now at the time we could not understand these things, but later I was to learn the meaning of these ominous kopjes that gathered in the twilight. Each of the Martians, standing in the great crescent I have described, had discharged, by means of the gunlike tube he carried, a huge canister over whatever hill, copse, cluster of houses, or other possible cover for guns, chanced to be in front of him. Some fired only one of these, some two--as in the case of the one we had seen; the one at Ripley is said to have discharged no fewer than five at that time. </p>
+      </div>
+    </details>
+    <details>
+      <summary>The man who escaped at the former place...</summary>
+      <div class="contents">
+        <p>...tells a wonderful story of the strangeness of its coiling flow and how he looked down from the church spire and saw the houses of the village rising like ghosts out of its inky nothingness. For a day and a half he remained there, weary, starving and sun-scorched, the earth under the blue sky and against the prospect of the distant hills a velvet-black expanse, with red roofs, green trees, and, later, black-veiled shrubs and gates, barns, outhouses, and walls, rising here and there into the sunlight.</p>
+      </div>
+    </details>
+    <details>
+      <summary>It was heavy, this vapour, heavier than the densest smoke...</summary>
+      <div class="contents">
+        <p>...so that, after the first tumultuous uprush and outflow of its impact, it sank down through the air and poured over the ground in a manner rather liquid than gaseous, abandoning the hills, and streaming into the valleys and ditches and watercourses even as I have heard the carbonic-acid gas that pours from volcanic clefts is wont to do. And where it came upon water some chemical action occurred, and the surface would be instantly covered with a powdery scum that sank slowly and made way for more. The scum was absolutely insoluble, and it is a strange thing, seeing the instant effect of the gas, that one could drink without hurt the water from which it had been strained. The vapour did not diffuse as a true gas would do. It hung together in banks, flowing sluggishly down the slope of the land and driving reluctantly before the wind, and very slowly it combined with the mist and moisture of the air, and sank to the earth in the form of dust. Save that an unknown element giving a group of four lines in the blue of the spectrum is concerned, we are still entirely ignorant of the nature of this substance.</p>
+      </div>
+    </details>
+    <details>
+      <summary>This they did with the vapour banks near us</summary>
+      <div class="contents">
+        <p>...as we saw in the starlight from the window of a deserted house at Upper Halliford, whither we had returned. From there we could see the searchlights on Richmond Hill and Kingston Hill going to and fro, and about eleven the windows rattled, and we heard the sound of the huge siege guns that had been put in position there. These continued intermittently for the space of a quarter of an hour, sending chance shots at the invisible Martians at Hampton and Ditton, and then the pale beams of the electric light vanished, and were replaced by a bright red glow.</p>
+      </div>
+    </details>
+    <details>
+      <summary>So, setting about it as methodically as men might smoke out a wasps' nest</summary>
+      <div class="contents">
+        <p>..the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced. </p>
+      </div>
+    </details>
+    <details>
+      <summary>Then the fourth cylinder</summary>
+      <div class="contents">
+        <p>Before the guns on the Richmond and Kingston line of hills began, there was a fitful cannonade far away in the southwest, due, I believe, to guns being fired haphazard before the black vapour could overwhelm the gunners.</p>
+      </div>
+    </details>
+  </section>
+  </div>
+  <script type="text/javascript">
+    function isElementSupported(tag) {
+      var element = document.createElement(tag);
+      return Object.prototype.toString.call(element) !== '[object HTMLUnknown Element]';
+    }
+    if (!isElementSupported('details')) {
+      console.log('this browser............ is lame. Details not supported >:[');
+    }
+  </script>
+</body>
+</html>
